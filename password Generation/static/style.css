@@ -1,0 +1,155 @@
+/* Google font-like smooth look */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Animated gradient background */
+body {
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(270deg, #667eea, #764ba2, #43cea2);
+    background-size: 600% 600%;
+    animation: gradientBG 12s ease infinite;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Gradient animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glassmorphism card */
+.container {
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    padding: 35px;
+    width: 370px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+
+    animation: fadeSlide 1s ease;
+}
+
+/* Card entrance animation */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+p {
+    text-align: center;
+    color: #e0e0e0;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* Labels */
+label {
+    color: #fff;
+    font-size: 14px;
+    margin-top: 12px;
+    display: block;
+}
+
+/* Inputs */
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+
+    border: none;
+    border-radius: 8px;
+    outline: none;
+
+    background: rgba(255,255,255,0.85);
+    font-size: 14px;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 2px rgba(102,126,234,0.5);
+}
+
+/* Button */
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(135deg, #667eea, #43cea2);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Button hover animation */
+button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+/* Button click */
+button:active {
+    transform: scale(0.97);
+}
+
+/* Result box */
+.result {
+    margin-top: 25px;
+    animation: popIn 0.6s ease;
+}
+
+/* Password reveal animation */
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.result h3 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.result input {
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
